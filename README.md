@@ -46,3 +46,9 @@ import {Button} from 'vant'
 [Button].map(item => {
   Vue.use(item)
 })
+#### ###  2. 适配移动各种屏幕三行代码
+#####   <script>
+    let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    let htmlDom  = document.getElementsByTagName('html')[0];
+    htmlDom.style.fontSize=htmlWidth/20+'px'
+   </script>
