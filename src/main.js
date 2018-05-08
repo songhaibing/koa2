@@ -3,8 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Button,Cell, CellGroup} from 'vant'
-[Button,Cell, CellGroup].map(item => {
+import {Button,Row, Col} from 'vant'
+[Button,Row,Col].map(item => {
   Vue.use(item)
 })
 

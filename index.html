@@ -4,9 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>koa2</title>
+    <!--iphone 5 1rem=16px html font-size=16px-->
+
   </head>
   <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+  <script>
+    // 适配移动各种屏幕三行代码，用rem
+    let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    let htmlDom  = document.getElementsByTagName('html')[0];
+    htmlDom.style.fontSize=htmlWidth/20+'px'
+  </script>
   </body>
 </html>
