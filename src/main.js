@@ -3,11 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import {Button,Row, Col} from 'vant'
-[Button,Row,Col].map(item => {
+import HTTP from './libs/httpRequest'
+import API from "./libs/api"
+import {Button,Row, Col,Swipe, SwipeItem,Lazyload } from 'vant'
+[Button,Row,Col,Swipe, SwipeItem,Lazyload ].map(item => {
   Vue.use(item)
 })
 
+Vue.prototype.$HTTP = HTTP
+Vue.prototype.$API = API
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

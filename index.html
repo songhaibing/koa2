@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>koa2</title>
     <!--iphone 5 1rem=16px html font-size=16px-->
-
   </head>
   <body>
     <div id="app"></div>
@@ -14,6 +13,7 @@
     // 适配移动各种屏幕三行代码，用rem
     let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
     let htmlDom  = document.getElementsByTagName('html')[0];
+    if(htmlWidth>750){htmlWidth=750}
     htmlDom.style.fontSize=htmlWidth/20+'px'
   </script>
   </body>
