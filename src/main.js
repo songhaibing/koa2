@@ -5,8 +5,9 @@ import App from './App'
 import router from './router'
 import HTTP from './libs/httpRequest'
 import API from "./libs/api"
+
 import {Button,Row, Col,Swipe, SwipeItem,Lazyload } from 'vant'
-[Button,Row,Col,Swipe, SwipeItem,Lazyload ].map(item => {
+[Button,Row,Col,Swipe, SwipeItem,Lazyload].map(item => {
   Vue.use(item)
 })
 

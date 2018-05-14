@@ -47,7 +47,6 @@ HTTP.post = function (url, data, callback) {
       //响应成功回调
       if (res.data.status === 0) {
         callback(res.data.data);
-        alert(JSON.stringify(res))
       } else {
         alert(ERROR_CODE[res.data.status]);
       }
@@ -71,7 +70,7 @@ HTTP.get = function (url, data, callback) {
       //响应成功回调
       if (res.data.status.toString() === '0') {
         callback(res.data.data)
-        alert(JSON.stringify(res))
+
       } else {
         alert(ERROR_CODE[res.data.status]);
       }
