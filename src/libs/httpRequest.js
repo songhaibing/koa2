@@ -1,7 +1,5 @@
 'use strict'
-import ERROR_CODE from './errorCode'
 import axios from 'axios'
-import IP from './address'
 import qs from 'qs'
 
 
@@ -42,7 +40,7 @@ let beforeResponse = instance.interceptors.response.use(function (response) {
  */
 HTTP.post = function (url, data, callback) {
   let params = qs.stringify(data)
-  instance.post(IP + url, params)
+  instance.post(url, params)
     .then(function (res) {
       //响应成功回调
     callback(res)
@@ -61,7 +59,7 @@ HTTP.post = function (url, data, callback) {
  */
 HTTP.get = function (url, data, callback) {
   let params = {params: data}
-  instance.get(IP + url, params)
+  instance.get(url, params)
     .then(function (res) {
       //响应成功回调
         callback(res)

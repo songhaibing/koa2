@@ -33,8 +33,8 @@
       </div>
       <div class="recommend-body">
         <swiper :options="swiperOption">
-          <swiper-slide v-for="(item,index) in recommendGoods" :key="index">
-            <div class="recommend-item">
+          <swiper-slide v-for="(item,index) in recommendGoods" :key="index" >
+            <div class="recommend-item" @click="clickGoods(item.goodsId)">
               <img :src="item.image" width="80%"/>
               <div>{{item.goodsName}}</div>
               <div>¥{{item.price}}(¥{{item.mallPrice}})</div>
@@ -78,15 +78,23 @@
       init() {
         let that = this;
         that.$HTTP.get(this.$API.index, {}, function (res) {
-          that.category = res.category;
-          that.adBanner = res.advertesPicture.PICTURE_ADDRESS;
-          that.bannerPicArray = res.slides;
-          that.recommendGoods = res.recommend;
-          that.floor1 = res.floor1;
+          that.category = res.data.data.category;
+          that.adBanner = res.data.data.advertesPicture.PICTURE_ADDRESS;
+          that.bannerPicArray = res.data.data.slides;
+          that.recommendGoods = res.data.data.recommend;
+          that.floor1 = res.data.data.floor1;
           that.floor1_0 = that.floor1[0];
           that.floor1_1 = that.floor1[1];
           that.floor1_2 = that.floor1[2];
           that.floor1_3 = that.floor1[3];
+        })
+      },
+      clickGoods(id){
+        this.$router.push({
+          path:'/Goods',
+          query:{
+            goodsId:id
+          }
         })
       }
     },
